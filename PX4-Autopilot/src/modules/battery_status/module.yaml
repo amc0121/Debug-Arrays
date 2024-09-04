@@ -98,6 +98,41 @@ parameters:
             num_instances: 5
             instance_start: 1
             default: [-0.9,3.0,0.0,1.5,0.2]
+    - group: Pilot Commands
+      definitions:
+        SM_PI_BREAKOUT:
+            description:
+                short: Pilot override breakout value to override GCS commands
+                long: |
+                    Pilot override breakout value to override GCS commands
+
+            type: float
+            decimal: 2
+            default: 0.1
+
+        SM_PI_MODE:
+            description:
+                short: Pilot command modes
+                long: |
+                    Pilot command modes
+
+            type: enum
+            values:
+              1: Transmitter
+              2: GCS Online
+              3: Trainer Mode
+              4: TBD (WIP)
+            default: 1
+
+        SM_PI_ROT_DIAL:
+            description:
+                short: Synthetic rotary dial value [-1,+1] if one is not present
+                long: |
+                    Synthetic rotary dial value [-1,+1] if one is not present
+
+            type: float
+            decimal: 2
+            default: 0
     - group: TCS
       definitions:
         SM_TCS_K${i}:
